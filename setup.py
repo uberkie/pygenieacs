@@ -7,7 +7,7 @@ setup(
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     author="uberkie",
-    author_email="your@email.com",
+    author_email="uberkie85@gmail.com",
     url="https://github.com/uberkie/pygenieacs",
     packages=find_packages(exclude=["tests", "examples"]),
     python_requires=">=3.8",
