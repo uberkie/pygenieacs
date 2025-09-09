@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="pygenieacs",  # PyPI package name
-    version="0.1.0",    # Update this with each release
+    name="pygenieacs",
+    version="0.1.0",
     description="Python API client for GenieACS TR-069 / CWMP server",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
@@ -13,7 +13,7 @@ setup(
     python_requires=">=3.8",
     install_requires=[
         "requests>=2.25.0",
-        "toml>=0.10.0",  # optional if you parse pyproject.toml internally
+        "toml>=0.10.0",
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",
