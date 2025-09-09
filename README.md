@@ -66,7 +66,7 @@ presets.create("daily-reboot", {
 ```
 Here’s a preset that applies a provision only if the device vendor is MikroTik:
 ```python
-from genieacs_client import PresetsAPI
+from pygenieacs import PresetsAPI
 
 presets = PresetsAPI(client)
 
