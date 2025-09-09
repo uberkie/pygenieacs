@@ -1,6 +1,6 @@
-[![PyPI version](https://badge.fury.io/py/pygenie.svg)](https://pypi.org/project/pygenie/)
+[![PyPI version](https://badge.fury.io/py/pygenieacs.svg)](https://pypi.org/project/pygenieacs/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-# pygenie
+# pygenieacs
 
 A Python API client for [GenieACS](https://genieacs.com) — a TR-069 / CWMP Auto-Configuration Server.  
 This library provides a simple interface to interact with the GenieACS **REST API**.
@@ -19,13 +19,13 @@ This library provides a simple interface to interact with the GenieACS **REST AP
 ## 📦 Installation
 
 ```python
-pip install pygenie
+pip install pygenieacs
 ```
 🚀 Usage
 
 Initialize Client
 ```python
-from pygenie import GenieACSClient, DevicesAPI, TasksAPI
+from pygenieacs import GenieACSClient, DevicesAPI, TasksAPI
 
 # Connect to your GenieACS server
 client = GenieACSClient(base_url="http://localhost:7557")
@@ -52,7 +52,7 @@ tasks.add(device_id, "reboot")
 ⚙️ Advanced
 Presets
 ```python
-from pygenie import PresetsAPI
+from pygenieacs import PresetsAPI
 
 presets = PresetsAPI(client)
 presets.create("daily-reboot", {
@@ -82,7 +82,7 @@ See [mikrotik-provision](#mikrotik-provision) below.
 
 This preset matches devices running firmware lower than v6.48 and applies a firmware upgrade task:
 ```python
-from pygenie import PresetsAPI
+from pygenieacs import PresetsAPI
 
 presets = PresetsAPI(client)
 
@@ -96,7 +96,7 @@ presets.create("firmware-upgrade", {
 ```
 This preset applies only to devices with OUI 001A2B (common for vendor-specific CPEs)/MAC prefix:
 ```python
-from pygenie import PresetsAPI
+from pygenieacs import PresetsAPI
 
 presets = PresetsAPI(client)
 
@@ -118,7 +118,7 @@ Here’s how to create a provision that ensures TR-069 Inform Interval is set co
 ### mikrotik-provision
 ```python
 
-from pygenie import ProvisionsAPI
+from pygenieacs import ProvisionsAPI
 
 provisions = ProvisionsAPI(client)
 
@@ -143,8 +143,8 @@ provisions.create("default-config", script)
 🛠 Development
 Clone the repo and install locally:
 ```python
-git clone https://github.com/uberkie/pygenie.git
-cd pygenie
+git clone https://github.com/uberkie/pygenieacs.git
+cd pygenieacs
 pip install -e .
 ```
 Run tests:

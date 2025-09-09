@@ -1,4 +1,4 @@
-name: Build & Publish pygenie 🐍📦
+name: Build & Publish pygenieacs 🐍📦
 
 on:
   push:
@@ -42,7 +42,7 @@ jobs:
     needs: build
     environment:
       name: testpypi
-      url: https://test.pypi.org/project/pygenie/
+      url: https://test.pypi.org/project/pygenieacs/
     permissions:
       id-token: write
     steps:
@@ -62,7 +62,7 @@ jobs:
     if: github.ref == 'refs/heads/main'  # only run on main
     environment:
       name: pypi
-      url: https://pypi.org/project/pygenie/
+      url: https://pypi.org/project/pygenieacs/
     permissions:
       id-token: write
       contents: write  # required for creating git tags
