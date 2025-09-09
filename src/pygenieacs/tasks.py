@@ -1,15 +1,20 @@
-from .client import GenieACSClient
+from .clients import GenieACSClient
 
 
 class TasksAPI:
     def __init__(self, client: GenieACSClient):
         self.client = client
 
-    async def add(self, device_id: str, name: str, parameters=None):
-        body = {"name": name}
-        if parameters:
-            body.update(parameters)
-        return await self.client.post(f"/devices/{device_id}/tasks", json=body)
+    async def list(self, query=None):
+        return await self.client.get("/tasks", params=query or {})
 
-    async def get(self, device_id: str):
-        return await self.client.get(f"/devices/{device_id}/tasks")
+    async def add(self, device_id: str, command: str, params=None):
+        """Add a task to a device"""
+        payload = {"command": command, "params": params or {}}
+        return await self.client.post(f"/devices/{device_id}/tasks", json=payload)
+
+    async def get(self, task_id: str):
+        return await self.client.get(f"/tasks/{task_id}")
+
+    async def delete(self, task_id: str):
+        return await self.client.delete(f"/tasks/{task_id}")
